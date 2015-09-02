@@ -3,6 +3,7 @@ import services.Service;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.InetSocketAddress;
 import java.net.Socket;
 
 public class Session implements Runnable {
@@ -15,7 +16,6 @@ public class Session implements Runnable {
 
     @Override
     public void run() {
-
 
         InputStream fromClinetToPortMux = null;
         OutputStream fromPortMuxToClient = null;
@@ -41,7 +41,8 @@ public class Session implements Runnable {
 
         Socket InsideSocket = null;
         try {
-            InsideSocket = new Socket(sess.getIP(), sess.getPort());
+            InsideSocket = new Socket();
+            InsideSocket.connect(new InetSocketAddress(sess.getIP(), sess.getPort()), 1000);
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -87,6 +88,8 @@ public class Session implements Runnable {
                     len = finalFromClinetToPortMux.read(buffer);
                     if(len > 0)
                         finalFromPortMuxToServer.write(buffer, 0, len);
+                    else if(len == -1)
+                        return;
                 }
             }
             catch (IOException e) {
@@ -123,6 +126,8 @@ public class Session implements Runnable {
                     len = finalFromServerToPortMux.read(buffer);
                     if(len > 0)
                         finalFromPortMuxToClient.write(buffer, 0, len);
+                    else if(len == -1)
+                        return;
                 }
             }
             catch (IOException e) {
