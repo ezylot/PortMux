@@ -1,4 +1,4 @@
-package services;
+package ga.ezylot.portmux.services;
 
 public class HTTP extends Service {
 

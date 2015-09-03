@@ -1,4 +1,6 @@
-import services.Service;
+package ga.ezylot.portmux;
+ 
+import ga.ezylot.portmux.services.Service;
 
 import java.io.IOException;
 import java.io.InputStream;

@@ -1,4 +1,6 @@
-import services.Service;
+package ga.ezylot.portmux;
+
+import ga.ezylot.portmux.services.Service;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,0 +1,48 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+		    classpath('org.ajoberstar:gradle-jacoco:0.1.0')
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'jacoco'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+	  testCompile("junit:junit:4.12")
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+mainClassName = "ga.ezylot.portmux.PortMux";
+
+jacoco {
+    toolVersion = "0.7.1.201405082137"
+    reportsDir = file("${project.buildDir}/jacoco/test.exec")
+}
+
+jar {
+    baseName = 'PortMux'
+    version =  '0.1.0'
+}
+
+idea {
+    module {
+        inheritOutputDirs = false
+        outputDir = file("$buildDir/classes/main/")
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.3'
+}
