@@ -1,4 +1,4 @@
-package services;
+package ga.ezylot.portmux.services;
 
 public class SSH_2_0_OPENSSH extends Service {
     @Override
