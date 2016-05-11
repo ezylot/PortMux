@@ -1,9 +1,17 @@
-import services.Service;
+package ezylot.at;
+
+import ezylot.at.services.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class ServiceDetector {
+
+    private String ip;
+
+    public ServiceDetector(String serverIP) {
+        this.ip = serverIP;
+    }
 
     private static List<Service> registeredServices = new ArrayList<>();
 

@@ -1,6 +1,7 @@
-import com.sun.corba.se.spi.activation.Server;
-import services.HTTP;
-import services.SSH_2_0_OPENSSH;
+package ezylot.at;
+
+import ezylot.at.services.HTTP;
+import ezylot.at.services.SSH_2_0_OPENSSH;
 
 import java.io.*;
 import java.net.*;
@@ -8,8 +9,8 @@ import java.net.*;
 public class PortMux {
     public static void main(String[] args) throws IOException {
         ServerSocket server = new ServerSocket(9999);
-        ServiceDetector.registerService("HTTP", new HTTP());
-        ServiceDetector.registerService("SSH", new SSH_2_0_OPENSSH());
+        ServiceDetector.registerService("HTTP", new HTTP("192.168.1.201"));
+        ServiceDetector.registerService("SSH", new SSH_2_0_OPENSSH("192.168.1.201", 22));
 
         while(true) {
             Socket OutsideSocket = server.accept();
