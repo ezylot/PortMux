@@ -1,4 +1,4 @@
-package ezylot.at.services;
+package at.ezylot.portmux.services;
 
 public class SSH_2_0_OPENSSH extends Service {
 

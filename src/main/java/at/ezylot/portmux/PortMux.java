@@ -1,7 +1,7 @@
-package ezylot.at;
+package at.ezylot.portmux;
 
-import ezylot.at.services.HTTP;
-import ezylot.at.services.SSH_2_0_OPENSSH;
+import at.ezylot.portmux.services.HTTP;
+import at.ezylot.portmux.services.SSH_2_0_OPENSSH;
 
 import java.io.*;
 import java.net.*;

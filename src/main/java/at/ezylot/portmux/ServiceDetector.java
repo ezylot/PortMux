@@ -1,6 +1,6 @@
-package ezylot.at;
+package at.ezylot.portmux;
 
-import ezylot.at.services.Service;
+import at.ezylot.portmux.services.Service;
 
 import java.util.ArrayList;
 import java.util.List;
