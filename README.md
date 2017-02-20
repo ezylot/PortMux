@@ -6,5 +6,7 @@ This project was called into life because of a problem that should not exist any
 The problem is, that many Routers that are shipped to customers still do not offer the possibility to add custom port-forwarding.
 Instead, people must call their provider and ask for every port, sometimes without success.
 
-This project should decrease annoyance by removing the necessity to forward a different port for every application.
+This project should decrease annoyance by removing the necessity to forward a different port for every application. Instead you will be able to reach different applications over the same port. 
+
+This is achived by analyzing the incomming data and deciding to which application the datastream should be proxied to.
 
